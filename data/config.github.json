@@ -8,8 +8,7 @@
     "max_tokens": 8192,
     "throttle_sec": 1,
     "languages": [
-      "zh",
-      "en"
+      "zh"
     ],
     "analysis_concurrency": 5,
     "enrichment_concurrency": 5
@@ -35,104 +34,324 @@
   "sources": {
     "github": [
       {
+        "type": "repo_releases",
+        "owner": "HKUDS",
+        "repo": "DeepTutor",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "walkinglabs",
+        "repo": "learn-harness-engineering",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "aaronyi97",
+        "repo": "image-story-video-wizard",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "vladkens",
+        "repo": "twscrape",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "fishaudio",
+        "repo": "fish-speech",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "plenaryapp",
+        "repo": "awesome-rss-feeds",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "Shubhamsaboo",
+        "repo": "awesome-llm-apps",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "walkinglabs",
+        "repo": "homepage",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "repo_releases",
+        "owner": "langchain-ai",
+        "repo": "langgraph",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
+        "type": "user_events",
+        "username": "walkinglabs",
+        "enabled": true,
+        "profile": "tech-news",
+        "category": "ai-tools"
+      },
+      {
         "type": "user_events",
         "username": "karpathy",
         "enabled": true,
-        "profile": "tech-news"
+        "profile": "tech-news",
+        "category": "ai-tools"
       },
       {
         "type": "repo_releases",
         "owner": "vllm-project",
         "repo": "vllm",
         "enabled": true,
-        "profile": "tech-news"
+        "profile": "tech-news",
+        "category": "ai-tools"
       },
       {
         "type": "repo_releases",
         "owner": "sgl-project",
         "repo": "sglang",
         "enabled": true,
-        "profile": "tech-news"
+        "profile": "tech-news",
+        "category": "ai-tools"
       },
       {
         "type": "repo_releases",
         "owner": "triton-lang",
         "repo": "triton",
         "enabled": true,
-        "profile": "tech-news"
+        "profile": "tech-news",
+        "category": "ai-tools"
       }
     ],
     "hackernews": {
       "enabled": true,
-      "fetch_top_stories": 30,
-      "min_score": 150,
-      "profile": "tech-news"
+      "fetch_top_stories": 50,
+      "min_score": 80,
+      "profile": "tech-news",
+      "category": "intel-world"
     },
     "rss": [
       {
-        "name": "Simon Willison",
-        "url": "https://simonwillison.net/atom/everything/",
+        "name": "Reuters World",
+        "url": "https://news.google.com/rss/search?q=Reuters+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "intel-world",
+        "profile": "tech-news"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/search?q=%22AP+News%22+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "intel-world",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Federal Reserve Press Releases",
+        "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+        "enabled": true,
+        "category": "intel-macro",
+        "profile": "finance-news"
+      },
+      {
+        "name": "FRED - Economic Data",
+        "url": "https://news.google.com/rss/search?q=FRED+Federal+Reserve+economic+data+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "intel-macro",
+        "profile": "finance-news"
+      },
+      {
+        "name": "arXiv cs.AI",
+        "url": "http://export.arxiv.org/rss/cs.AI",
+        "enabled": true,
+        "category": "intel-world",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Hacker News",
+        "url": "https://hnrss.org/frontpage",
+        "enabled": true,
+        "category": "intel-world",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Import AI",
+        "url": "https://importai.substack.com/feed",
+        "enabled": true,
+        "category": "intel-world",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Starter Story",
+        "url": "https://news.google.com/rss/search?q=%22Starter+Story%22+startup+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Tiny Teams",
+        "url": "https://news.google.com/rss/search?q=%22Tiny+Teams%22+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/feed",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Mom Clock",
+        "url": "https://news.google.com/rss/search?q=%22Mom+Clock%22+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Customer.io",
+        "url": "https://news.google.com/rss/search?q=%22customer.io%22+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Venture Hacks",
+        "url": "https://venturehacks.com/feed",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-blog"
+      },
+      {
+        "name": "Indie Hackers",
+        "url": "https://news.google.com/rss/search?q=%22Indie+Hackers%22+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Lenny's Newsletter",
+        "url": "https://www.lennysnewsletter.com/feed",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Workbuddy 一人公司",
+        "url": "https://news.google.com/rss/search?q=Workbuddy+one-person+company+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "product-startup",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Polymarket Politics",
+        "url": "https://news.google.com/rss/search?q=Polymarket+prediction+market+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "invest-market",
+        "profile": "tech-news"
+      },
+      {
+        "name": "WhaleWisdom",
+        "url": "https://news.google.com/rss/search?q=%22WhaleWisdom%22+OR+%22whale+wisdom%22+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "invest-market",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Koyfin",
+        "url": "https://news.google.com/rss/search?q=Koyfin+markets+when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "invest-market",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Google AI Blog",
+        "url": "https://blog.google/technology/ai/rss/",
         "enabled": true,
         "category": "ai-tools",
         "profile": "tech-news"
       },
       {
-        "name": "vLLM Blog",
-        "url": "https://vllm.ai/blog/rss.xml",
+        "name": "Google Colab Blog",
+        "url": "https://research.google/blog/rss/",
         "enabled": true,
-        "category": "llm-inference",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
-      },
-      {
-        "name": "Sean Goedecke",
-        "url": "https://www.seangoedecke.com/rss.xml",
-        "enabled": true,
-        "category": "software-engineering",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
-      },
-      {
-        "name": "CNBC Finance",
-        "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664",
-        "enabled": true,
-        "category": "finance",
-        "profile": "finance-news",
-        "content_extractor": "trafilatura"
+        "category": "ai-tools",
+        "profile": "tech-news"
       },
       {
         "name": "GitHub Trending - Daily",
         "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
         "enabled": true,
-        "category": "github-trending",
+        "category": "ai-tools",
         "profile": "tech-news"
       },
       {
-        "name": "Semianalysis",
-        "url": "https://newsletter.semianalysis.com/feed",
+        "name": "The Changelog",
+        "url": "https://changelog.com/feed",
         "enabled": true,
-        "category": "semiconductors",
+        "category": "ai-tools",
+        "profile": "tech-blog"
+      },
+      {
+        "name": "Gmail",
+        "url": "https://news.google.com/rss/search?q=Gmail+update&when:24h&hl=en-US&gl=US&ceid=US:en",
+        "enabled": false,
+        "category": "misc",
         "profile": "tech-news"
       },
       {
-        "name": "LWN.net",
-        "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
+        "name": "YouTube Channel Feed",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_ME",
         "enabled": false,
-        "category": "linux-kernel",
+        "category": "misc",
         "profile": "tech-news"
       }
     ],
     "reddit": {
       "enabled": true,
+      "fetch_comments": 5,
       "subreddits": [
         {
-          "subreddit": "MachineLearning",
+          "subreddit": "artificial",
           "enabled": true,
           "sort": "hot",
           "time_filter": "day",
           "fetch_limit": 10,
-          "min_score": 60,
-          "profile": "tech-news"
+          "min_score": 50,
+          "profile": "tech-news",
+          "category": "misc"
+        },
+        {
+          "subreddit": "ChatGPT",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 50,
+          "profile": "tech-news",
+          "category": "misc"
         },
         {
           "subreddit": "LocalLLaMA",
@@ -141,40 +360,89 @@
           "time_filter": "day",
           "fetch_limit": 10,
           "min_score": 60,
-          "profile": "tech-news"
+          "profile": "tech-news",
+          "category": "ai-tools"
+        },
+        {
+          "subreddit": "MachineLearning",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 60,
+          "profile": "tech-news",
+          "category": "ai-tools"
         }
       ],
-      "users": [],
-      "fetch_comments": 10
+      "users": []
     },
-    "telegram": {
-      "enabled": true,
-      "channels": [
-        {
-          "channel": "zaihuapd",
-          "enabled": true,
-          "fetch_limit": 20,
-          "profile": [
-            "tech-news",
-            "finance-news"
-          ]
-        }
-      ]
+    "twitter": {
+      "enabled": false,
+      "mode": "playwright",
+      "users": [],
+      "keywords": [],
+      "fetch_limit": 10,
+      "fetch_reply_text": false,
+      "max_replies_per_tweet": 3,
+      "max_tweets_to_expand": 10,
+      "reply_min_likes": 5,
+      "category": "ai-tools",
+      "profile": "tech-news",
+      "cookie_dir": "data",
+      "cookie_file_pattern": "x_cookies_*.json"
     }
   },
   "collection": {
     "time_window_hours": 24
   },
   "digest": {
-    "max_items": null,
+    "max_items": 25,
     "profile_order": [
       "tech-news",
       "tech-blog",
       "finance-news"
     ],
-    "category_groups": {},
+    "group_by": "category",
+    "category_groups": {
+      "01-intel": {
+        "name": "01-情报",
+        "limit": 10,
+        "categories": [
+          "intel-world",
+          "intel-macro"
+        ]
+      },
+      "02-product": {
+        "name": "02-产品",
+        "limit": 6,
+        "categories": [
+          "product-startup"
+        ]
+      },
+      "03-invest": {
+        "name": "03-投资",
+        "limit": 4,
+        "categories": [
+          "invest-market"
+        ]
+      },
+      "04-ai": {
+        "name": "04-AI",
+        "limit": 10,
+        "categories": [
+          "ai-tools"
+        ]
+      },
+      "05-misc": {
+        "name": "05-杂项",
+        "limit": 4,
+        "categories": [
+          "misc"
+        ]
+      }
+    },
     "default_group": "other",
-    "default_group_limit": null
+    "default_group_limit": 2
   },
   "webhook": {
     "enabled": false,

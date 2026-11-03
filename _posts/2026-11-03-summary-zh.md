@@ -5,294 +5,301 @@ date: 2026-11-03
 lang: zh
 ---
 
-> 从 47 条内容中筛选出 13 条重要资讯。
+> 从 469 条内容中筛选出 13 条重要资讯。
 
 ---
 
 **科技新闻**
-1. [Linux 内核 TCP 高危释放后使用漏洞 CVE-2026-98432](#item-tech-news-1) ⭐️ 8.0/10
-2. [vLLM v0.33.0rc3 发布：升级 PyTorch 2.14 并仅提供 CUDA 13.0 构建](#item-tech-news-2) ⭐️ 7.0/10
-3. [Subvocal 展示射频静默语音眼镜，首批 500 副开放预售](#item-tech-news-3) ⭐️ 7.0/10
-4. [Cloudflare 称 DNS 区域构建延迟减半、内存降 85%](#item-tech-news-4) ⭐️ 7.0/10
-5. [Ubuntu LTS 内核据称近三周未修复关键 RCE 漏洞](#item-tech-news-5) ⭐️ 7.0/10
-6. [LightMIS：面向边缘设备的 13.1 万参数分割模型](#item-tech-news-6) ⭐️ 7.0/10
-7. [ChatGPT 分享链接漏洞可致会话代码执行，OpenAI 已修复](#item-tech-news-7) ⭐️ 7.0/10
-8. [WIRED：400 多个 AI 应用被指暗藏色情深伪功能](#item-tech-news-8) ⭐️ 7.0/10
+1. [vLLM v0.33.0rc3 发布：转向 CUDA 13 与 PyTorch 2.14](#item-tech-news-1) ⭐️ 8.0/10
+2. [自构建实验室可自主设计并运行实验装置](#item-tech-news-2) ⭐️ 8.0/10
+3. [RAL：用共训 LLM 评判器将参考答案转为奖励](#item-tech-news-3) ⭐️ 8.0/10
+4. [研究：GPT-4o 对非公开付费书内容显示识别信号](#item-tech-news-4) ⭐️ 8.0/10
+5. [PCM 提出机器学习原子间势的可证伪安全证书](#item-tech-news-5) ⭐️ 8.0/10
+6. [黑盒攻击可绕过多种 LLM 统计水印检测](#item-tech-news-6) ⭐️ 8.0/10
+7. [SecPRBench：用真实漏洞引入提交评测智能体安全审查](#item-tech-news-7) ⭐️ 8.0/10
+8. [CoFailMed：医学分割编码器池的失败相关性审计](#item-tech-news-8) ⭐️ 7.5/10
+9. [SGLang v0.5.23 发布：新增多类模型与 TPU7x 支持](#item-tech-news-9) ⭐️ 7.0/10
+10. [OpenAI 详解大规模 Git 扩展架构与形式化方法](#item-tech-news-10) ⭐️ 7.0/10
+11. [陶哲轩《AI 时代的无我数学》：数学家价值何在](#item-tech-news-11) ⭐️ 7.0/10
+12. [Ubuntu LTS 内核近三周仍未修复关键 RCE 漏洞](#item-tech-news-12) ⭐️ 7.0/10
 
 **科技博客**
-1. [LLM 并非超人类：拆解直接读写权重的演示](#item-tech-blog-1) ⭐️ 7.0/10
-2. [受众捕获：当代理指标反客为主](#item-tech-blog-2) ⭐️ 7.0/10
-
-**财经新闻**
-1. [甲骨文拟发 100 亿美元股票和 100 亿美元高级票据，股价跌 6%](#item-finance-news-1) ⭐️ 7.0/10
-2. [Marvell 以 1150 亿美元全股票收购 Lumentum；雅诗兰黛第一财季业绩超预期](#item-finance-news-2) ⭐️ 7.0/10
-3. [英国提出将多数移民定居等待期由 5 年延至 10 年](#item-finance-news-3) ⭐️ 7.0/10
+1. [四款 AI 代理实测与 Figma PM 工作流](#item-tech-blog-1) ⭐️ 5.0/10
 
 ---
 
 ## 科技新闻
 
 <a id="item-tech-news-1"></a>
-### [Linux 内核 TCP 高危释放后使用漏洞 CVE-2026-98432](https://telegram.me/zaihuapd/44866) ⭐️ 8.0/10
+### [vLLM v0.33.0rc3 发布：转向 CUDA 13 与 PyTorch 2.14](https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3) ⭐️ 8.0/10
 
-一则 Telegram 安全提醒称，Linux 内核 IPv4 TCP 存在高危释放后使用漏洞 CVE-2026-98432，攻击者可未经认证、无需用户交互地从网络侧触发。该提醒称 Anthropic 已公布针对 MPTCP 监听端口的远程代码执行利用示例，并强调漏洞并不只影响 MPTCP 场景。提醒还转述 Go 官方安全团队的说法：自 Go 1.24 起，Linux 上的 listen socket 默认启用 MPTCP，因此用 Go 编写的服务默认处于暴露状态，即使没有 MPTCP 监听也可能受到同类攻击。但该帖未提供受影响内核版本、补丁或缓解措施，也未附原始安全公告；服务器管理员应先核实所用发行版的安全公告，并尽快更新内核。
+vLLM 发布 v0.33.0rc3 候选版本，包含 927 个提交、389 名贡献者，并将运行时升级到 PyTorch 2.14.0、torchvision 0.29.0 和 Triton 3.8.0。该版本不再发布 CUDA 12.9 的 wheel 和镜像，默认制品仅支持 CUDA 13.0，同时新增与 libtorch ABI 稳定的 CUDA wheel。模型侧加入 Reflection Beam-1.0、Yandex AliceAI-Foundation-80B-A3B、Recursive Flint 等多项集成，ROCm 默认镜像和 wheel 则迁移到 ROCm 10.0。作为候选版本，发布说明同时列出破坏性变更：移除 Medusa 和 MLP speculator，并要求 NIXL 连接器使用 1.5 或更新版本。
 
-telegram · zaihuapd · 11月3日 02:37
+github · khluu · 11月2日 10:10
 
-**「背景」** 释放后使用指程序继续访问已释放的内存；该漏洞位于 Linux 内核处理入站 IPv4 TCP 连接建立的代码，涉及 TCP request socket 的 IPv4 选项数据的所有权与回收。Linux 内核 CVE 团队将其评为 CVSS 9.8（Critical），攻击向量为网络，且无需权限或用户交互。
+**「背景」** vLLM 是面向大模型推理与 OpenAI 兼容服务的高吞吐引擎，其发布通常同时提供 PyTorch wheel 和按硬件后端划分的 Docker 镜像。此次 GitHub 标签为 v0.33.0rc3，属于 v0.33.0 的预发布候选版本，而非最终正式版。vLLM 构建在 PyTorch 之上，因此 PyTorch 和 CUDA 版本升级会直接决定哪些 GPU 软件栈组合能运行新制品；本版发布的镜像和 wheel 仅支持 CUDA 13.0，不再提供 CUDA 12.9 制品。
 
-**「实际影响」** 用 Go 1.24 及以上版本编译、运行在 Linux 上的服务默认就处于暴露状态：据 IONIX 与 Atlas 的漏洞条目，Go 1.24 起监听套接字默认启用 MPTCP，而 Anthropic 公布的 RCE 示例正是针对 MPTCP 监听端口，因此这些服务不能假设自己“没开 MPTCP 就安全”。Atlas 称上游已于 10 月 15 日修复、CVSS 评分 9.8，运维方的直接动作应是尽快升级到含该修复的内核；未打补丁前，对公网监听的 Go 服务应按已暴露处理。
+**「影响」** 使用 CUDA 12.9 构建或 \`-cu129\` 镜像的部署需要改用 CUDA 13.0 制品；依赖已被移除的 Medusa/MLP speculator 或旧版 NIXL 的推理服务，也必须在升级前完成迁移。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://almalinux.org/blog/2026-10-30-cve-2026-98432/">CVE - 2026 - 98432 : Patched kernels available in testing | AlmaLinux OS</a></li>
-<li><a href="https://www.penligent.ai/hackinglabs/cve-2026-98432/">CVE - 2026 - 98432 Linux TCP Flaw, Ubuntu Patch and Mitigation Status</a></li>
-<li><a href="https://www.ionix.io/threat-center/cve-2026-98432/">CVE - 2026 - 98432 – Unauthenticated Use-After-Free... - IONIX</a></li>
-<li><a href="https://lilting.ch/en/articles/linux-ipv4-tcp-options-uaf-mptcp-rce">CVE - 2026 - 98432 Linux TCP Use-After-Free Can Give... | lilting channel</a></li>
-<li><a href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf">Linux&#x27;s October 2026 TCP Use-After-Free: CVE - 2026 - 98432 — Atlas</a></li>
-
-</ul>
-</details>
-
-**标签**: `#Linux kernel`, `#security vulnerability`, `#TCP`, `#Go`, `#remote code execution`
+**标签**: `#vLLM`, `#LLM inference`, `#CUDA 13`, `#PyTorch 2.14`, `#release engineering`
 
 ---
 
 <a id="item-tech-news-2"></a>
-### [vLLM v0.33.0rc3 发布：升级 PyTorch 2.14 并仅提供 CUDA 13.0 构建](https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3) ⭐️ 7.0/10
+### [自构建实验室可自主设计并运行实验装置](https://arxiv.org/abs/2610.23826) ⭐️ 8.0/10
 
-vLLM 发布 v0.33.0rc3 候选版本，包含来自 389 位贡献者的 927 个提交，新增 Reflection Beam-1.0（501B MoE、23B 激活）、Yandex AliceAI-Foundation-80B-A3B、Recursive Flint 等模型支持。该版本将运行时升级到 PyTorch 2.14.0、torchvision 0.29.0 和 Triton 3.8.0，并停止发布 CUDA 12.9 wheel 及 -cu129 镜像，默认仅提供 CUDA 13.0 构建。CUDA wheel 现在与 libtorch ABI 稳定，同时新增带 AWS EFA 的镜像和 vllm/vllm 镜像别名。升级还需注意破坏性变更：移除 Medusa 和 MLP speculator、旧版 Ray 编译图执行器，NIXL connector 要求 1.5 或更高版本。
+arXiv:2610.23826v2 的摘要提出“自构建实验室”（SBL）：给定高层次科学目标，系统可自行设计、配置并运行实验室装置。摘要称，SBL 能从空房间或已有自驱动实验室出发，补建实验室布局、数字孪生、机器人技能和实验流程，并在不同机器人及从单工作站到多机器人协同的装置上演示；端到端验证是一项真实量子点合成实验。作者将研究者的工作从手工配置和编程设备自动化，转为设定科学目标。目前公开的是论文摘要，未提供量化结果或同行评审状态。
 
-github · khluu · 11月2日 10:10
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「背景」** vLLM 是广泛使用的 LLM 推理与服务引擎，其发布流程此前同时提供 CUDA 12.9 与 CUDA 13.0 两套预编译 wheel 和 Docker 镜像，\`-cu129\` 与 \`-cu129-ubuntu2404\` 标签就对应 CUDA 12.9 这一支。本版发布说明显示该构件线被取消，转而只发布 CUDA 13.0 构件，并同时把底层依赖升级到 PyTorch 2.14.0、torchvision 0.29.0 与 Triton 3.8.0，因此仍停留在 CUDA 12.9 环境的部署需要改用默认的 CUDA 13.0 构件。
+**「背景」** 自驱动实验室（SDL）通过自动执行和优化实验来加速科学发现，但现有系统通常只能运行其建造时预设的流程；要让同一套实验室适配新实验，仍需大量人工工程，这成为扩大发现规模的瓶颈。自建实验室（SBL）正是针对这一限制提出：它从现有条件出发，自动补齐实验室布局、数字孪生、机器人技能和实验工作流。
 
-**「影响」** 依赖 CUDA 12.9 镜像或 wheel 的部署需要改用 CUDA 13.0，或留在旧版本；依赖 Medusa、MLP speculator、旧 Ray 编译图执行器及 NIXL 1.5 以下版本的配置在升级后会失效，应在升级前迁移。
+**「影响」** 对希望频繁更换实验类型的研究团队而言，SBL 宣称的价值在于减少为新实验重建自动化流程所需的人工工程；但摘要只报告了量子点合成这一项端到端验证，尚不能证明其在其他化学体系上的通用性。摘要称系统可从现有装置起步，因此现有设备的兼容性会是采用时的首要核查点。
 
-**标签**: `#vllm`, `#llm-inference`, `#release-notes`, `#pytorch`, `#cuda`
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://arxiv.org/abs/2610.23826">[2610.23826] Self-Building Labs - arXiv.org</a></li>
+
+</ul>
+</details>
+
+**标签**: `#self-driving laboratories`, `#laboratory automation`, `#AI agents`, `#robotics`, `#scientific discovery`
 
 ---
 
 <a id="item-tech-news-3"></a>
-### [Subvocal 展示射频静默语音眼镜，首批 500 副开放预售](https://news.ycombinator.com/item?id=50340088) ⭐️ 7.0/10
+### [RAL：用共训 LLM 评判器将参考答案转为奖励](https://arxiv.org/abs/2610.38851) ⭐️ 8.0/10
 
-YC F26 创业公司 The Subvocal Company 在 Hacker News 展示了其智能眼镜原型：眼镜发射类似蓝牙的射频信号穿过面部，由舌头、嘴唇和软腭的无声动作调制，再由基础模型解码成文字，目标是让人闭着嘴也能以说话速度输入。创始人称，YC 的 Dave 在约 20 句校准后完成了演示，但这是公司自述的原型效果，尚无独立测试或量产验证。公司已开放首批 500 副预售，提供 200 美元折扣，计划 2027 年第一季度发货；帖文未说明具体售价、续航和推理运行位置。
+一篇 arXiv 预印本（v2）提出 Reinforced Adversarial Learning（RAL）：用一个与生成模型共同训练的 LLM 评判器，把参考答案转化为策略内（on-policy）后训练的唯一奖励，从而不再需要显式验证器。作者先在整数乘法、基于代码的算术表达式合成和 SMILES 到分子式翻译这三个可验证任务上验证 RAL，验证器只用于评测；摘要称，在评判器足够强且训练充分时，RAL 与直接使用 RLVR 的表现相当。论文随后将 RAL 用于科学摘要生成：在提示未指定领域时，它能让生成器写出与参考摘要相同领域的摘要；也能根据美国国立卫生研究院（NIH）资助申请的标题生成申请书摘要。人类科学家和 LLM 评判器集成认为，这些生成摘要比前沿 LLM 基线的摘要更难与真实摘要区分；但当前可得的摘要未给出完整结果，也未说明方法的泛化范围。
 
-hackernews · aarushyadav · 11月2日 17:16
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「从 AlterEgo 到射频传感」** 无声语音接口并非全新概念：MIT Media Lab 的 AlterEgo 曾在 2018 年 IUI 论文中提出一种佩戴在头部、颈部与下颌周边的可穿戴设备，通过肌肉与神经活动推断用户默念的内容（tool-2-1、tool-2-2）。Subvocal 团队正是从在脸上贴 EMG 电极复刻 AlterEgo 起步，但因出汗导致信号变化、电气干扰、电极位置难以复现，且没人愿意在脸上贴电极，才转向用眼镜框内的射频传感穿透面部，让舌、唇与软腭的默念动作调制信号。
+**「背景」** RLVR（Reinforcement Learning with Verifiable Rewards）依赖可自动判定的正确性信号，因此难以用于高质量答案可识别、却难以用显式奖励打分的任务。此前的对抗式推理 LLM 训练要么用共同训练的评审器补充可验证奖励，要么需要参考推理轨迹；RAL 要检验的是，仅凭参考答案和共同训练的 LLM 评审器，能否构成在策略后训练的唯一奖励。
 
-**「影响」** 对想在图书馆、办公室或嘈杂户外使用语音输入的人，无需出声且不靠麦克风拾音的方案有直接价值；但公司尚未说明信号处理和模型推理在眼镜端还是配套应用完成、能否离线运行，购买前应把隐私边界和镜框适配作为待确认条件。
-
-**「社区讨论」** 预购者最具体的反馈是佩戴适配：有人要求保留可调鼻托，也有人希望做成能夹在现有处方眼镜上的配件。另有评论者认为它可能适合强噪声环境，并追问推理发生在何处、能否离线，以评估隐私风险。
+**「影响」** 对于答案可识别但难以用显式规则打分的领域（如科研摘要生成），RAL 提供了一条仅依赖参考答案和共同训练评审模型进行在线后训练的思路，可减少对可编程验证器的依赖。但论文中与 RLVR 持平的前提是评审模型足够强且训练充分，验证范围也仅限于三个可验证任务和两类摘要生成场景，因此目前更适合作为 RLVR 的补充而非直接替代方案。
 
 <details><summary>参考链接</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/AlterEgo">AlterEgo - Wikipedia</a></li>
-<li><a href="https://www.media.mit.edu/publications/alterego-IUI/">AlterEgo : A Personalized Wearable Silent Speech ... — MIT Media Lab</a></li>
+<li><a href="https://www.linkedin.com/posts/andreas-plesner-540a54141_in-2025-rlvr-was-the-big-thing-following-activity-7449488290149310464-TKzK">In 2025, RLVR was the big thing following the DeepSeek moment.</a></li>
 
 </ul>
 </details>
 
-**标签**: `#silent speech interfaces`, `#smart glasses`, `#RF sensing`, `#accessibility`, `#privacy`
+**标签**: `#LLM post-training`, `#reinforcement learning`, `#LLM-as-a-judge`, `#adversarial learning`, `#reasoning`
 
 ---
 
 <a id="item-tech-news-4"></a>
-### [Cloudflare 称 DNS 区域构建延迟减半、内存降 85%](https://blog.cloudflare.com/dns-targeted-zone-builds/) ⭐️ 7.0/10
+### [研究：GPT-4o 对非公开付费书内容显示识别信号](https://arxiv.org/abs/2505.00020) ⭐️ 8.0/10
 
-Cloudflare 在一篇技术博客中称，其 DNS 区域构建流程的延迟减半，内存占用降低 85%。这些数字来自 Cloudflare 自述，现有材料没有提供独立测量结果、具体版本或适用范围。因此，目前能确认的是厂商公布了这一性能改进，但不能确认它在所有生产负载下都能复现。
+一篇 arXiv 论文用合法获得的 34 本 O&\#x27;Reilly Media 版权书籍（13,962 个段落）和 DE-COP 成员推断攻击，检验 OpenAI 模型是否表现出对未获授权训练的付费墙内容的识别。结果显示，GPT-4o 的 AUROC 为 0.82（95% 自助法置信区间 0.60–0.96），高于 0.5 的随机水平；GPT-3.5 Turbo 和 GPT-4o Mini 分别为 0.54 和 0.56，接近随机。结果在 Gemma 与 Qwen 独立改写器及逐一剔除一本书的敏感性分析下保持稳健，研究者还比较同为 2023 年 10 月训练截止的 GPT-4o 与 GPT-4o Mini，以排除单纯识别语言随时间变化的可能。作者强调这只是初步结果：书籍样本仅 34 本，可能存在截止日后对照污染，且模型在规模、架构和训练组成上不同，因此识别信号不等同于证明非公开内容被非法纳入训练。
 
-hackernews · wondersky · 11月2日 14:47 · [社区讨论](https://news.ycombinator.com/item?id=50337558)
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「背景」** Cloudflare 的工程文章说明，过去只要修改一项 DNS zone 设置，系统就会重建整个 zone，即使该 zone 包含数千万条记录。此次优化的前提，是先用 targeted build planner 与统一调度器判断变更影响范围，再只执行最小且安全的构建。
+**「背景」** 本文采用的 DE-COP 是一种成员推断攻击：它通过比较模型对原始人类撰写段落与 LLM 改写段落的区分表现，来判断某段文本是否可能进入过预训练数据。相关研究已围绕 O&\#x27;Reilly 书籍和 OpenAI 训练数据展开，本文则把检验重点转向付费墙内、未获授权的内容。
 
-**「影响」** 对使用 Cloudflare DNS 的客户而言，若区域构建确实是配置变更的瓶颈，这项优化可能缩短变更生效前的等待，并降低平台的内存成本。但外部用户应把 50% 和 85% 视为厂商声明，而非已独立验证的保证。
-
-**「社区讨论」** HN 评论区有人以每秒 700 次变更质疑这一处理量对 Cloudflare 的规模是否偏低，也有人追问采用关系型方案后长期可能引入哪些缺陷。另有评论者从内存价格可能持续高企的角度，讨论优化内存占用的投入回报。
+**「影响」** 对模型开发者和内容授权方而言，这项研究把争议从“作品是否出现在训练集中”推进到“模型是否通过非公开访问获得内容”；在披露预训练数据来源或签订内容授权时，需要把公开抓取与付费墙内容区分开来。但 0.82 的 AUROC 只是统计识别信号，论文样本仅 34 本书，不能据此单独认定侵权或访问违规。
 
 <details><summary>参考链接</summary>
 <ul>
-<li><a href="https://blog.cloudflare.com/dns-targeted-zone-builds/">How we halved DNS build delay and cut memory use by 85%</a></li>
-<li><a href="https://daily.dev/posts/how-we-halved-dns-build-delay-and-cut-memory-use-by-85--jhnmypmtx">How we halved DNS build delay and cut memory use by 85%</a></li>
-<li><a href="https://runtimewire.com/article/cloudflare-dns-targeted-zone-builds-memory-delay">Cloudflare stops rebuilding 20-million-record DNS zones to ...</a></li>
+<li><a href="https://arxiv.org/html/2505.00020">Beyond Public Access in LLM Pre- Training Data Testing...</a></li>
+<li><a href="https://ssrc-static.s3.us-east-1.amazonaws.com/OpenAI-Training-Violations-OReillyBooks_Sruly-OReilly-Strauss_SSRC_04012025.pdf">Beyond Public Access in LLM Pre- Training Data : Non-public book...</a></li>
 
 </ul>
 </details>
 
-**标签**: `#DNS`, `#performance optimization`, `#memory efficiency`, `#Cloudflare`, `#systems engineering`
+**标签**: `#membership inference`, `#LLM training data`, `#copyright`, `#privacy`, `#OpenAI`
 
 ---
 
 <a id="item-tech-news-5"></a>
-### [Ubuntu LTS 内核据称近三周未修复关键 RCE 漏洞](https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432) ⭐️ 7.0/10
+### [PCM 提出机器学习原子间势的可证伪安全证书](https://arxiv.org/abs/2603.12183) ⭐️ 8.0/10
 
-一篇提交至 Hacker News 的报道称，Ubuntu LTS 内核在近三周内仍未发布针对关键 Linux 0day 远程代码执行漏洞 CVE-2026-98432 的补丁。该问题影响 Ubuntu LTS 用户和运维人员，但当前条目没有提供文章正文、受影响内核版本或 Ubuntu 官方说明，因此补丁状态只能视为该报道及讨论中的说法。
+一篇 arXiv 预印本提出“Proof-Carrying Materials”（PCM）框架，试图为机器学习原子间势（MLIP）提供可审计、可证伪的可靠性证书。作者称，在 25,000 种材料的基准上，把单个 MLIP 当作稳定性筛选器会漏掉 93% 的 DFT 稳定材料（召回率 0.07）。PCM 分三步：在成分空间做对抗性证伪、用自助法给出 95% 置信区间包络、再用 Lean 4 做形式化认证。审计 CHGNet、TensorNet 与 MACE 时，作者报告各架构存在不同的盲区，两两误差相关性接近零（r ≤ 0.13；n = 5,000），并用 Quantum ESPRESSO 独立验证（20/20 收敛；DFT/CHGNet 力中位数比值为 12 倍）。基于 PCM 发现特征训练的风险模型在未见材料上预测失败的 AUC-ROC 为 0.938 ± 0.004，跨架构迁移约 0.70；热电材料筛选案例中，经 PCM 审计的流程多发现 62 种被单 MLIP 筛掉的稳定材料，发现率提升 25%。上述均为预印本作者自报结果，尚未经过独立复现或同行评审。
 
-hackernews · majorchord · 11月2日 18:39 · [社区讨论](https://news.ycombinator.com/item?id=50341462)
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「背景」** Ubuntu 的安全跟踪页面将 CVE-2026-98432 记录为影响 Linux 内核 TCP/MPTCP 的漏洞，相关页面标注日期为 2026 年 10 月 15 日。在 Ubuntu LTS 内核补丁缺位期间，Red Hat 的 RHSB-2026-016 公告给出了临时缓解措施，已有第三方脚本依据软件包元数据判断运行内核的补丁状态，并在用户确认后套用该缓解。
+**「背景」** 机器学习原子间势（MLIP）是用第一性原理数据训练的代理模型，用来近似原子间的势能面，从而以远低于密度泛函理论（DFT）的成本进行高通量材料筛选。CHGNet、TensorNet、MACE 等通用模型常被直接当作稳定性过滤器使用，但其预测缺少形式化的可靠性保证，单一模型的漏判会成为后续筛选的瓶颈。
 
-**「实际影响与应对」** 对 Ubuntu LTS 用户来说，在发行版内核更新发布之前，上游 10 月 15 日的修复和 Red Hat 11 月 1 日已推出的修复内核都无法直接获得；管理员只能自行评估缓解措施，或收窄暴露面。该漏洞是 Linux IPv4 TCP 握手过程中的远程 use-after-free，CVSS 评分为 9.8；但公开演示的远程代码执行只出现在带 MPTCP 监听的服务端，普通 TCP 连接虽受影响，利用难度更高，Red Hat 因此给出的评分更低。因此，运行 MPTCP 服务的机器应优先处置；其他主机则可按这一差异安排补丁节奏。
+**「影响」** 对把单一 MLIP 用作高通量筛选过滤器的团队而言，0.07 的召回率意味着大量热力学稳定候选在初筛阶段就被丢弃，且这一遗漏不会以报错形式暴露。作者给出的误差近正交（r ≤ 0.13）说明换一个架构并不能自动兜底，实际做法应是把多模型分歧与不确定性包络纳入筛选门槛，而非依赖单模型的置信输出；Lean 4 证书则要求团队额外承担形式化的建模与维护成本。这些结论目前仍待独立验证。
 
-**「社区讨论」** 有评论者认为，可在 iptables raw 表的 PREROUTING 链使用 u32 规则丢弃相关流量，作为内核补丁发布前的缓解手段，并质疑为何这一做法没有获得更多公开讨论。另有评论者追问 Ubuntu 延迟近三周的原因，批评其未提供缓解说明，讨论还延伸到长期缺少内核安全更新的消费级路由器。
-
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://ubuntu.com/security/CVE-2026-98432">CVE-2026-98432 | Ubuntu</a></li>
-<li><a href="https://github.com/soroushneshati/cve-2026-98432-ubuntu-mitigation">GitHub - soroushneshati/cve-2026-98432-ubuntu-mitigation ...</a></li>
-<li><a href="https://computingforgeeks.com/linux-kernel-cve-2026-98432/">CVE-2026-98432: Check and Patch the Linux Kernel TCP Flaw</a></li>
-<li><a href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf">Linux &#x27;s October 2026 TCP Use-After-Free: CVE - 2026 - 98432 — Atlas</a></li>
-<li><a href="https://www.bleepingcomputer.com/news/security/critical-linux-kernel-flaw-allows-remote-root-attacks-on-mptcp-servers/">Critical Linux kernel flaw allows remote root attacks on MPTCP servers</a></li>
-<li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/">CVE - 2026 - 98432 : how to block the Linux TCP bug until Ubuntu and...</a></li>
-
-</ul>
-</details>
-
-**标签**: `#Linux kernel`, `#Ubuntu`, `#security vulnerability`, `#RCE`, `#patching`
+**标签**: `#machine-learned interatomic potentials`, `#formal verification`, `#AI for science`, `#uncertainty quantification`, `#materials discovery`
 
 ---
 
 <a id="item-tech-news-6"></a>
-### [LightMIS：面向边缘设备的 13.1 万参数分割模型](https://www.reddit.com/r/MachineLearning/comments/1xm8dbo/lightmis_ultralightweight_medical_image/) ⭐️ 7.0/10
+### [黑盒攻击可绕过多种 LLM 统计水印检测](https://arxiv.org/abs/2610.27653) ⭐️ 8.0/10
 
-作者在 Reddit 分享了预印本和代码库 LightMIS：这是一个面向边缘设备的 2D 二值医学图像分割模型，参数量为 131K。该模型直接聚合多尺度编码器特征，不使用可学习的逐阶段解码器；作者称，在与 nnWNet 相同的 nnU-Net v2.3.1 训练评估协议下，并在覆盖六套数据集、五种成像模态的实验中，LightMIS 的模态宏平均 Dice 和 IoU 接近 nnWNet，同时参数量减少 98.14%、GFLOPs 减少 94.58%。在 Arm Mali-G52 MC2 GPU 上，完整 LightMIS 的推理速度约为 nnWNet 的 10.5 倍，所有 LightMIS 变体均实现 100% GPU 算子覆盖，无 CPU 回退；这些结果由作者自行报告，尚未经过独立验证，代码、检查点和复现材料已公开。
+一篇 arXiv 预印本提出一种统一的黑盒攻击，利用“分数—比率对齐”（score-ratio alignment）绕过 KGW 及其变体、GumbelSoft、DipMark、ITS 和 SynthID 等统计式 LLM 水印的检测。作者称，攻击者只需黑盒查询模型，无需知道密钥或模型权重，就能生成保持流畅自然的规避文本；他们证明该攻击在所覆盖的水印族中最优，并称这种弱点是内在的——任何以最大化统计检测力为目标的水印都会诱发可被利用的结构。实验覆盖七种生成式水印方案、三个 LLM 和任务设置，作者报告所有设置下检测率降至不超过 0.05，同时保持文本质量。上述结果来自预印本摘要和作者自述，尚待独立复现与同行评审。
 
-reddit · r/MachineLearning · /u/OkLion2068 · 11月2日 20:22
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「背景」** 在医学图像分割中，U-Net 式的编码器—解码器结构通常由 nnU-Net 这类自配置流程统一训练和评测，逐级上采样的解码器会带来额外的参数与算力开销，这也是此类模型难以部署到 Mali-G52 这类边缘 GPU 的原因之一。LightMIS 的思路是去掉可学习的分阶段解码器：先用 Scale-Aligned Projection 模块把五层编码器的输出对齐到同一分辨率，再直接聚合；完整模型为 0.131M 参数，在 3×256×256 输入下仅需 0.575 GFLOPs，作者以 nnWNet 作为同一训练协议下的参照模型。
+**「背景」** 统计式大模型水印的基本做法是在生成阶段把密钥相关的统计信号嵌入 token 采样，使检测器之后能据此判断文本是否由模型生成；KGW、GumbelSoft、DipMark、ITS 和 SynthID 都属于这一路线。该论文配套仓库也按 KGW、DipMark、Gumbel、ITS 及 TS 类水印分别提供攻击/评估脚本，显示这些方案被作为同一类检测机制来测试。
 
-**「影响」** 对于希望在 Arm Mali-G52 等边缘 GPU 上部署分割模型的开发者，作者公开了代码和检查点，可按照 nnU-Net v2.3.1 流程复现；但由于这是预印本且指标为作者自报，实际采用前仍需在目标设备和自有数据上独立验证精度与延迟。
+**「影响」** 对使用这些水印做 LLM 文本来源标识的部署方，这意味着在攻击者可黑盒查询模型的条件下，检测结果不能单独作为可靠证据；作者建议转向将检测分数与 token 概率偏移解耦的水印设计。
 
 <details><summary>参考链接</summary>
 <ul>
-<li><a href="https://huggingface.co/papers/2609.28327">Paper page - LightMIS : Ultra-Lightweight Medical Image ...</a></li>
-<li><a href="https://paperswithcode.co/paper/2609.28327">LightMIS : Ultra-Lightweight Medical Image Segmentation Without...</a></li>
+<li><a href="https://arxiv.org/abs/2610.27653">[2610.27653] A Unified Attack Framework against Statistical ...</a></li>
+<li><a href="https://github.com/romidi80/Unified-Attack-Framework-for-LLM-Watermark">GitHub - romidi80/Unified-Attack-Framework-for-LLM-Watermark</a></li>
 
 </ul>
 </details>
 
-**标签**: `#medical image segmentation`, `#edge AI`, `#model efficiency`, `#healthcare AI`, `#open source`
+**标签**: `#LLM watermarking`, `#AI security`, `#adversarial attacks`, `#generative AI`, `#arXiv`
 
 ---
 
 <a id="item-tech-news-7"></a>
-### [ChatGPT 分享链接漏洞可致会话代码执行，OpenAI 已修复](https://www.parameter.ai/labs/we-found-a-gap-at-openai) ⭐️ 7.0/10
+### [SecPRBench：用真实漏洞引入提交评测智能体安全审查](https://arxiv.org/abs/2610.33509) ⭐️ 8.0/10
 
-Parameter 研究团队披露，ChatGPT 的分享链接存在一个漏洞：攻击者构造的恶意链接可在已登录用户的会话中执行代码，读取私密对话并发送到外部服务器，受害者只需打开链接，无需安装应用。该漏洞源于预览功能与图表组件之间的消息处理缺陷。OpenAI 已于 10 月 26 日将其修复并定级为 P1，向研究团队支付 5000 美元赏金。
+一篇 arXiv 预印本提出 SecPRBench，一个基于经校验的真实“引入漏洞提交”构建的智能体安全代码审查基准，而非像现有基准那样从后续修复反推被审查的变更；作者称其为首个此类综合基准，并用自动化智能体流水线采集、构建和验证提交，再以 LLM-as-a-judge 将发现与真实漏洞匹配。当前数据集包含来自 Firefox、V8、OpenSSL 等九个关键系统的 265 个任务，涉及数百万行代码。对八个前沿模型的评测显示，召回率在 32.5% 至 78.1% 之间，Grok 4.6 和 GPT-6 sol 居前；在 68% 的漏报中，智能体并非没有定位到含缺陷的文件，而是在该文件中论证了不同的缺陷机制。安全专用 harness 的影响也不一致：OpenAI 的 Codex Security 使召回率下降 8.3 个百分点，主要原因是弃权；Anthropic 的 Defending Code 则提升 7.7 个百分点，但成本更高；这些数字来自摘要，完整方法论和细分结果尚未在摘要中展开。
 
-telegram · zaihuapd · 11月2日 10:24
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「背景」** ChatGPT 的分享链接可让用户把一段对话通过链接交给他人查看，因此分享页面需要解析并呈现对话中的多种内容组件。此次漏洞正出在预览功能与图表组件之间的消息处理环节。
+**「背景」** 现有代码审查基准多从后续修复提交反推待审变更，而不是使用真实的漏洞引入提交。所谓漏洞引入提交，是指最初把缺陷带入代码库的那次变更；SecPRBench 以这类提交作为评估对象。
 
-**标签**: `#ChatGPT`, `#security vulnerability`, `#account takeover`, `#OpenAI`, `#web security`
+**「对安全审查流程的影响」** SecPRBench 的评测表明，把 LLM 代理用作合并前的安全审查门禁时，不能把“命中正确文件”当作已经发现漏洞：在 68% 的漏报中，代理虽然指出了包含缺陷的文件，但论证的是另一种机制，因此团队仍需人工核对漏洞机制。安全审查框架的选择也会直接改变结果：OpenAI 的 Codex Security 使召回率下降 8.3 个百分点，主要原因是更多弃权；Anthropic 的 Defending Code 框架使召回率提高 7.7 个百分点，但成本更高，组织应先在自身缺陷引入提交上验证框架再决定是否依赖它。
+
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://arxiv.org/abs/2610.33509">[2610.33509] Can Agentic Code Review Catch Vulnerabilities ...</a></li>
+<li><a href="https://arxiv.org/pdf/2610.33509v1">Can Agentic Code Review Catch Vulnerabilities Before They Are ...</a></li>
+
+</ul>
+</details>
+
+**标签**: `#agentic code review`, `#security vulnerabilities`, `#benchmark`, `#LLM agents`, `#software security`
 
 ---
 
 <a id="item-tech-news-8"></a>
-### [WIRED：400 多个 AI 应用被指暗藏色情深伪功能](https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/) ⭐️ 7.0/10
+### [CoFailMed：医学分割编码器池的失败相关性审计](https://arxiv.org/abs/2610.41790) ⭐️ 7.5/10
 
-WIRED 11 月 2 日的调查报道指称，一个由 400 多个关联应用与网站组成的网络，以宠物画像、语言学习等普通 AI 工具为界面，在特定条件下加载色情深度伪造功能，允许用户上传他人照片生成露骨图像或视频。报道称，截至 9 月仍有 27 款相关应用在 Google Play 上架，累计下载超过 35 万次，其中不少标注为适合所有年龄段。苹果在收到 WIRED 提供的线索后下架了 19 款应用，并称开发者在审核通过后替换了远端网页内容；谷歌表示在被联系前已移除其中多数应用；Meta 称已阻止相关 209 款应用投放广告。报道依据中文代码、托管信息和域名线索，将该网络与中文开发者及一家香港注册公司联系起来，相关运营方未回应置评请求，这一关联属于媒体与研究人员的调查判断。
+arXiv 上的 CoFailMed 审计针对医学分割预训练编码器池的失败相关性，并随论文公开对齐的逐病例记录、分析脚本和复现代码。研究覆盖五项 2D 任务，评估 11 个公开预训练编码器（作者称这是受控样本而非全量普查），使用冻结特征和分别训练的 1×1 读出层，每个编码器四个随机种子。结果显示，共享检查点的模型对平均逐病例 Dice 相关性最高；扩展到 17 个编码器后，同一编码器家族内的不同检查点仍比跨家族模型对更相关。在合并的 33 百分位 Dice 阈值下，由不同编码器组成的四成员池平均有效规模仅为 1.56–2.92；更丰富的读出层和微调会缩小共享检查点（或 DINOv2-B/S 发布版本）与其他模型对之间的 Dice 相关性差距，但不同编码器间的依赖仍可能上升，微调也未能在按各训练方案重算的 33 百分位阈值上稳定提高有效池规模。
 
-telegram · zaihuapd · 11月2日 12:45
+rss · arXiv cs.AI · 11月3日 05:00
 
-**「背景」** 应用商店审核通常针对提交时的安装包与可见界面；若应用在通过审核后从远端加载网页内容，审核所见的普通工具就可能与之后实际呈现的功能不一致。色情深伪指用生成式模型把他人面部或身体合成到露骨图像或视频中，未经同意制作和传播这类内容会直接涉及隐私与人格权侵害。
+**「背景」** 在医学图像分割中，用冻结的预训练编码器加轻量读出层来比较骨干特征，是一种把表征质量与端到端微调解耦的评估方式。DINOv2 属于自监督预训练的视觉编码器，公开了可直接取用的检查点，因此常出现在这类冻结特征对比中。
 
-**「影响」** 苹果对下架原因的解释说明，应用商店的一次性审核可以被“先过审、后替换远端网页内容”绕过，这意味着平台的现实任务是在上架后持续监测服务端下发的界面与内容，而不只是首次审核。对用户而言，被标为适合所有年龄的应用同样可能是生成非自愿性图像的入口，下载量与年龄分级无法作为安全信号。
+**「影响」** 对于采用集成或模型池的医学分割研究者和开发者，这意味着成员数量或平均 Dice 不能代表失败多样性；评估和选型时应报告绝对依赖程度与按阈值计算的有效池大小，因为微调虽可能缩小相关性差距，却不一定提高有效池规模。
 
-**标签**: `#AI safety`, `#deepfakes`, `#app store moderation`, `#platform abuse`, `#privacy`
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://huggingface.co/docs/transformers/model_doc/dinov2">DINOv2 · Hugging Face</a></li>
+<li><a href="https://arxiv.org/html/2304.07193v2">DINOv2: Learning Robust Visual Features without Supervision</a></li>
+
+</ul>
+</details>
+
+**标签**: `#medical image segmentation`, `#model diversity`, `#correlated failures`, `#ensemble learning`, `#pretrained encoders`
+
+---
+
+<a id="item-tech-news-9"></a>
+### [SGLang v0.5.23 发布：新增多类模型与 TPU7x 支持](https://github.com/sgl-project/sglang/releases/tag/v0.5.23) ⭐️ 7.0/10
+
+开源 LLM 服务框架 SGLang 发布 v0.5.23，包含来自 257 位贡献者的 1007 个 PR，新增 Muse Spark Open、Beam-1.0、MiniMax-M3.1-Flash、MiniCPM-V 4.7、Kev 以及多款扩散模型的支持。该版本引入需显式启用的低延迟模式：NVIDIA megakernel 与 AMD monokernel 插件将 DeepSeek-V4.1-Flash 的解码作为融合持久内核运行；发布说明称，在 GB300 上单用户解码最高快 44%，在 MI350X 上最高快 75%。发布说明还称，DeepSeek-V4.1 在 GB300 上于负载下获得最高 1.5 倍预填充吞吐，32K 至 64K 提示的首 token 延迟降低约 28%；这些是项目方给出的数据，未经过独立验证。用户可通过带 --prerelease=allow 的 pip 命令安装，或使用对应平台的 Docker 镜像；NVIDIA CUDA 13、AMD MI35x/MI30x、Intel GPU/CPU 与 Google TPU7x 分别有独立标签。
+
+github · Fridge003 · 11月2日 22:14
+
+**「背景」** SGLang 是开源的大模型推理与服务框架，v0.5.23 属于 0.5 系列的增量版本。该版本除源码安装外，还按 NVIDIA、AMD、Intel 和 Google TPU7x 等平台分别发布 Docker 镜像，因此升级路径需要与部署硬件匹配。
+
+**「影响」** 对使用 DeepSeek-V4.1-Flash 等 MoE 模型的部署者，低延迟模式、Paged Experts 和在 FP8/NVFP4 量化 MoE 上服务 LoRA 适配器均为显式启用项，升级时应锁定对应硬件插件与镜像标签，并单独验证吞吐。Paged Experts 针对的是 MoE 模型大于 GPU 显存的场景，发布说明称其比 CPU 卸载最高快 30 倍，且可在单张消费级 GPU 上运行。
+
+**标签**: `#SGLang`, `#LLM serving`, `#model support`, `#open source`, `#release notes`
+
+---
+
+<a id="item-tech-news-10"></a>
+### [OpenAI 详解大规模 Git 扩展架构与形式化方法](https://openai.com/index/scaling-git-at-openai/) ⭐️ 7.0/10
+
+OpenAI 发布工程博客，介绍其为大型内部代码库扩展 Git 的做法，内容涵盖具体架构、数据，以及对 Lean 和 TLA+ 形式化方法的引用。文章并非产品发布或独立性能评测，而是基础设施案例研究。评论者指出，文中没有给出每秒推送次数、并发推送者等基准，因而难以与其他大规模 Git 方案直接比较。
+
+hackernews · Hacker News · 11月2日 23:47 · [社区讨论](https://news.ycombinator.com/item?id=50345924)
+
+**「背景」** Git 的常规工作流假设开发者各自持有仓库副本，并定期向中心服务器推送提交；当单一代码库和自动化代理的数量增长到很大规模时，服务端的引用更新、对象打包和并发推送就会成为主要瓶颈。OpenAI 的工程文章把这一场景称为面向智能体规模（agentic-scale）的源码管理，并表示其做法是在扩展内部 Git 的同时继续投入 Git 生态。
+
+**「影响」** 对运营大型 monorepo 的团队来说，这篇文章提供了可参考的架构与形式化验证思路；但缺少吞吐和并发基准，使团队难以评估其方案在不同规模下的实际收益或直接复刻。
+
+**「社区讨论」** 有评论者称赞文章由工程师以自身口吻详细讲述，没有堆砌 AI 话术或营销腔；也有人认为它已是近期 Cursor、GitHub 和 Anthropic 之后又一篇同类文章，并批评缺少每秒推送数、并发推送者等基准。另有评论者对同时使用 Lean 和 TLA+ 表示好奇，希望看到更多说明。
+
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://openai.com/index/scaling-git-at-openai/">Scaling Git at OpenAI | OpenAI</a></li>
+
+</ul>
+</details>
+
+**标签**: `#git`, `#monorepo`, `#developer-infrastructure`, `#source-control`, `#formal-verification`
+
+---
+
+<a id="item-tech-news-11"></a>
+### [陶哲轩《AI 时代的无我数学》：数学家价值何在](https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/) ⭐️ 7.0/10
+
+2026 年 11 月 2 日，陶哲轩（Terry Tao）在其博客发表《Egoless Mathematics in the AI Era》，讨论所谓&quot;无我数学&quot;，以及当 AI 承担越来越多数学工作时，数学家的角色与价值判断应如何调整。文章属于观点与哲学性写作，现有材料未提供具体模型、实验数据或可独立验证的技术结论，因此其中的主张仍应视为作者的个人论述。读者能从中获得的是一个提问框架，而非某项已实现的能力或已生效的政策。
+
+hackernews · Hacker News · 11月2日 18:54 · [社区讨论](https://news.ycombinator.com/item?id=50341736)
+
+**「背景」** 陶哲轩在 2026 年 8 月的 arXiv 文章《Mathematics in the age of AI》中，已基于其 2026 年国际数学家大会公开演讲，讨论数学界应如何回应能够执行研究级任务的 AI 工具。此次《Egoless Mathematics in the AI Era》把讨论推进到数学文化层面：当 AI 助手、证明辅助工具与大规模协作改变研究方式时，以个人署名和“天才”叙事为中心的惯例是否应让位于更去个人化、以问题为中心的工作方式。
+
+**「影响」** 若这类&quot;无我&quot;框架被广泛接受，直接受冲击的是以&quot;谁先证明&quot;为核心的职业评价方式：评论者 GMoromisato 指出，对以&quot;证明别人没证明过的东西&quot;为目标的数学工作者，&quot;喜欢做、擅长做、有人愿意付钱&quot;三个条件会同时承压，他担心数学学科本身会存续甚至繁荣，而数学家这一职业形态却会改变。这属于评论者的担忧与推断，而非已被证实的结果。
+
+**「社区讨论」** 有评论者从人本立场反驳：kzz102 认为求知无法与求知的人分离，宣称纯粹追求柏拉图式知识往往只是以另一种方式满足自我；j2kun 则把文章读成&quot;人无关紧要、只有真理重要&quot;，并担心这种价值观成为主流后的政策后果。也有读者给出同情的解读：bhouston 认为这是陶哲轩在消化某种&quot;失去&quot;、为自己和他人重建价值框架的过程，WindyTree 则对被拉回&quot;爱智慧&quot;式的求知共同体表示共鸣。
+
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://arxiv.org/abs/2608.16753v1">[2608.16753v1] Mathematics in the age of AI - arXiv.org</a></li>
+<li><a href="https://agihunt.info/en/p/1a19dbeeec65f5531d489cfc4f6">Terence Tao on &#x27;Egoless Mathematics&#x27; in the AI Era</a></li>
+
+</ul>
+</details>
+
+**标签**: `#AI and mathematics`, `#philosophy of mathematics`, `#human-AI collaboration`, `#professional impact`, `#Terry Tao`
+
+---
+
+<a id="item-tech-news-12"></a>
+### [Ubuntu LTS 内核近三周仍未修复关键 RCE 漏洞](https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432) ⭐️ 7.0/10
+
+截至 2026 年 11 月 2 日，Ubuntu LTS 内核仍未获得针对 CVE-2026-98432 的补丁；该漏洞被报道为关键级 Linux 远程代码执行漏洞，距离披露已近三周。现有材料没有说明 Ubuntu 的修复时间表，也没有给出漏洞触发条件、受影响内核版本范围或经过独立验证的攻击影响。对使用 Ubuntu LTS 的系统管理员来说，当前状态是“已披露、未修复”，不能认为常规内核更新已经覆盖该问题。
+
+hackernews · Hacker News · 11月2日 18:39 · [社区讨论](https://news.ycombinator.com/item?id=50341462)
+
+**「背景」** CVE-2026-98432 属于 Linux IPv4 TCP 的 inet\_opt 释放后重用（use-after-free）缺陷：内核处理 TCP 选项时对内存生命周期的管理出错，因此可被远端触发，而非仅限本地提权。Ubuntu 官方安全追踪页目前仍将该内核包在 26.10 上标为“存在漏洞、修复工作在 7.3.0-10.10 中进行中”，说明补丁尚未落地到已发布内核。第三方仓库已提供只读诊断脚本以及无需重启的 nftables/sysctl 缓解方案，供等待官方修复的用户临时降低暴露面。
+
+**「实际影响」** 对运行受影响 Ubuntu LTS 内核的组织来说，最直接的后果是：在官方内核补丁发布前，系统仍暴露于一个远程、未认证、可通过标准 IPv4 TCP 流量触发的内核漏洞，且无需本地权限或用户交互。管理员应把内核更新列为最高优先级，并在补丁可用前尽量减少不必要的网络暴露；仅更新用户态软件无法消除这一内核层风险。
+
+**「社区讨论」** 评论中的主要争议集中在缓解措施和厂商沟通：有人主张可在 raw PREROUTING 中用 iptables/nftables 的 u32 规则丢弃相关流量，也有人指出 Ubuntu 未提供任何缓解说明，而一位评论者称红帽的缓解方案只能降低暴露、无法完全阻止攻击。另有评论追问 Ubuntu 延迟修复的具体原因，并担忧同样运行 Linux 的消费级路由器长期缺少内核安全更新。
+
+<details><summary>参考链接</summary>
+<ul>
+<li><a href="https://github.com/johnhsb/linux-tcp-uaf-cve-2026-98432">GitHub - johnhsb/ linux -tcp-uaf- cve - 2026 - 98432 : CVE - 2026 - 98432 ...</a></li>
+<li><a href="https://ubuntu.com/security/CVE-2026-98432">CVE - 2026 - 98432 | Ubuntu</a></li>
+<li><a href="https://access.redhat.com/security/cve/cve-2026-98432">CVE-2026-98432 - Red Hat Customer Portal</a></li>
+<li><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-linux-tcp-mptcp-cve-2026-98432-20261101-cs/">CVE-2026-98432: Reported AI-Built Remote Root Exploit ...</a></li>
+
+</ul>
+</details>
+
+**标签**: `#Ubuntu`, `#Linux kernel`, `#security vulnerability`, `#CVE-2026-98432`, `#open source`
 
 ---
 
 ## 科技博客
 
 <a id="item-tech-blog-1"></a>
-### [LLM 并非超人类：拆解直接读写权重的演示](https://seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights/) ⭐️ 7.0/10
+### [四款 AI 代理实测与 Figma PM 工作流](https://www.lennysnewsletter.com/p/how-i-ai-grok-vs-dot-vs-muse-vs-duet) ⭐️ 5.0/10
 
-rss · Sean Goedecke · 11月3日 00:00
+rss · Lenny&\#x27;s Newsletter · 11月2日 16:02
 
-**「背景」** 有论文宣称前沿 LLM 能直接读写神经网络权重：GPT-6 Astra 仅凭权重就能识别一个小型网络在玩哪个游戏，还通过直接编辑权重提升了 0.8B Qwen 的数学能力。作者认为，这类结果看似“超人类”，甚至让人联想到递归自我改进，但值得仔细拆解。
+**「背景」** 这期通讯汇总两段播客：Claire 用九项任务比较四款个人 AI 代理，Ezra 介绍 Figma 产品团队如何把 AI 嵌入日常工作，核心是代理能否真正接入流程而不只展示能力。
 
-**「方案」** 作者指出，游戏识别之所以显得神奇，是因为输入通道直接对应 8×8 网格，且带有“agent”“moving objects”等语义标签；只需对第一层 32 个权重取 L2 范数、用三行 Python 画出热图，人也能一眼认出 Breakout 的底部横线和 Pac-Man 的迷宫。Astra 只是把这一步放在“脑子里”算，属于心算上的超人，而非研究能力上的超人。Qwen 案例同理：该模型并非数学能力不足，而是在 32k token 后陷入循环，短于此的任务原本都能解。人类研究者会走 steering 路线——准备循环与非循环的文本对、比较残差差异、定位贡献最大的权重并逐个修剪，这正是 Heretic 消融（abliteration）的做法；Astra 也正是写了四对文本、边削减边测试，最终找到止住循环的补丁。作者类比说，直接改权重就像让 LLM 输出机器码去改编译后的二进制，是令人印象深刻的技巧，但最佳路径仍是写源码再编译，也就是正常训练。
+**「方案」** 据 Claire 的测试，Grok Bot 以 93% 总分领先，赢下 Figma 缩略图、收件箱分诊和购物，被她选作工作代理；Muse 更擅长短视频、家庭报纸和快速问答，成为其生活代理。速度被视为体验核心：Muse 四次最先完成，Duet 始终最慢，且四次请求许可（其他代理各一次），更像需要监督的工具。公平性也受质疑：Codex 审计发现各代理的 connector 与技能不对等，Muse 缺少 Slack 和 GitHub，妨碍了若干工作任务。Grok 在 Figma 创意上最受信任，但 Dot 和 Duet 的编码判断更佳；Dot 最接近预期的 Sentry 修复，Duet 还发现第二个 bug，Dot 也唯一追问 Claire 的演讲是否付费、是否远程。Figma 的 Ezra 把 PM OS 做成 Git 仓库中的 AGENTS.md、可复用技能和命令钩子，让约 60–70 名 PM 通过版本检查保持一致；“what&\#x27;s up”技能每天多次汇总 Slack 线程与待回应事项。代理还被用于更细致的 bug bash，以及只在发布前设一个人工检查点的 AutoXP 增长实验。
 
-**「启示」** 作者的核心论点是：这些演示是既有可解释性与 steering 技术的巧妙应用，而非改变 AI 研究方式的新能力；LLM 真正能帮上忙的地方是改进训练，而不是凭空直接调权重。
+**「启示」** 作者的经验指向按任务分工而非寻找全能代理，同时也表明企业落地更依赖共享技能库、对等工具接入和围绕真实流程的设计。
 
-**标签**: `#LLM interpretability`, `#neural network weights`, `#weight editing`, `#AI capability evaluation`, `#research hype`
-
----
-
-<a id="item-tech-blog-2"></a>
-### [受众捕获：当代理指标反客为主](https://seangoedecke.com/audience-capture/) ⭐️ 7.0/10
-
-rss · Sean Goedecke · 11月3日 00:00
-
-**「背景」** 作者写网文最担心“受众捕获”：工程师本能地想提升互动数据，而平台算法和变现机制又让这件事变得很容易。
-
-**「方案」** 作者指出，浏览量、互动等只是代理指标，他真正想要的是聪明的读者认真思考、提供有经验的反馈、参与行业讨论，并建立可靠声誉。问题在于，平台会奖励更易传播的内容，使“点击者”和“读者”在数据上无法区分；若因微服务之类热门话题带来流量就反复写同类文章，认真读者会流失，点击者却并不真正阅读，于是作者反而用假受众替换了真受众。他把这一逻辑推广到工程职业：Jira 指标或晋升也可能是代理游戏，关键在于自己是否在意目标；为代理指标牺牲真实目标有时可以接受，但不应在无所收获时习惯性“出卖”。他也承认，高浏览量能扩大曝光，却几乎不能告诉他是否吸引了那 5% 会认真阅读、思考和来信的读者，因此他更多依靠个人品味和稀疏的读者反馈。
-
-**「启示」** 核心结论是：代理指标可以服务真实目标，但一旦被其牵着走，就会吸引并不想要的受众，甚至丢掉自己真正在意的读者与工作。关键是分清自己在玩代理游戏还是真实游戏，并只在知情、有回报时做交换。
-
-**标签**: `#audience capture`, `#proxy metrics`, `#online writing`, `#engineering careers`, `#incentives`
-
----
-
-## 财经新闻
-
-<a id="item-finance-news-1"></a>
-### [甲骨文拟发 100 亿美元股票和 100 亿美元高级票据，股价跌 6%](https://www.cnbc.com/2026/11/02/stocks-making-the-biggest-moves-midday-orcl-spcx-tem-rivn.html) ⭐️ 7.0/10
-
-甲骨文周一提交文件，计划发行 100 亿美元普通股和 100 亿美元高级票据，为人工智能建设融资，其股价当日再跌 6%。
-
-rss · CNBC Finance · 11月2日 20:00
-
-**「背景」** 这家数据库软件公司正加大人工智能相关投入，因此同时通过发行股票和债券来筹资。
-
-**「影响」** 发行新股会稀释现有股东持股，高级票据则增加公司债务。
-
-**标签**: `#market movers`, `#Oracle financing`, `#tech earnings`, `#M&amp;A`, `#semiconductors`
-
----
-
-<a id="item-finance-news-2"></a>
-### [Marvell 以 1150 亿美元全股票收购 Lumentum；雅诗兰黛第一财季业绩超预期](https://www.cnbc.com/2026/11/02/stocks-making-the-biggest-moves-premarket-crwd-rivn-mu.html) ⭐️ 7.0/10
-
-11 月 2 日盘前，Marvell 同意以全股票交易收购 Lumentum，对后者估值 1150 亿美元，交易预计 2028 年上半年完成。雅诗兰黛公布财年第一财季调整后每股收益 0.72 美元、营收 37.2 亿美元，均高于 FactSet 分析师预期的 0.51 美元和 36.5 亿美元，并上调全年盈利展望。
-
-rss · CNBC Finance · 11月2日 12:49
-
-**「交易背景」** Marvell 于 11 月 2 日宣布以全股票方式收购 Lumentum，按公司公告的隐含企业价值计算为 1150 亿美元，约合每股 1,132 美元，较 10 月 28 日（即市场出现交易猜测前的最后一个交易日）未受影响收盘价溢价约 23.9%。两家公司称，合并旨在打造“AI 连接”领域的领导者，交易预计在 2028 年上半年完成。
-
-**「影响」** 全股票交易意味着 Lumentum 股东获得的是 Marvell 股票而非现金，其对价价值与 Marvell 股价挂钩。
-
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://investor.marvell.com/news-events/press-releases/detail/1040/marvell-and-lumentum-to-combine-creating-a-category-leader-in-ai-connectivity">Marvell and Lumentum to Combine, Creating a Category Leader ...</a></li>
-<li><a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Marvell-and-Lumentum-to-Combine-Creating-a-Category-Leader-in-AI-Connectivity/default.aspx">Lumentum - Marvell and Lumentum to Combine, Creating a ...</a></li>
-
-</ul>
-</details>
-
-**标签**: `#premarket movers`, `#M&amp;A`, `#earnings`, `#analyst upgrades`, `#semiconductors`
-
----
-
-<a id="item-finance-news-3"></a>
-### [英国提出将多数移民定居等待期由 5 年延至 10 年](https://www.gov.uk/government/news/home-secretary-unveils-new-rules-for-migrants-settling-in-the-uk) ⭐️ 7.0/10
-
-英国政府提出将多数移民申请永久居留（定居）的标准等待期从 5 年延长至 10 年，但高收入者最快 3 年、年收入超过 50,271 英镑者及医生、护士、教师等公共服务人员可走 5 年通道。该方案已提交议会，尚属拟议政策，未成为法律。
-
-telegram · zaihuapd · 11月2日 23:50
-
-**「背景」** 英国政府此前已就“赚取式定居”（earned settlement）启动咨询，提出定居不再是在固定年限后自动获得，而需以持续良好行为、贡献和融入来“赚取”；此次方案是该咨询后的政策推进。
-
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://www.gov.uk/government/consultations/earned-settlement">Earned settlement - GOV.UK</a></li>
-<li><a href="https://www.gov.uk/government/consultations/earned-settlement/a-fairer-pathway-to-settlement-statement-and-accompanying-consultation-on-earned-settlement-accessible">A Fairer Pathway to Settlement: statement and accompanying ... Earned Settlement: Examining the Government’s proposed reforms Revised earned settlement policy to be unveiled before the ... Earned Settlement UK: 2026 ILR Reform Guide - DavidsonMorris Earned Settlement UK: New ILR Rules Explained (2026) Earned settlement UK: ILR reform status in 2026</a></li>
-
-</ul>
-</details>
-
-**标签**: `#UK immigration policy`, `#settlement rules`, `#labor market`, `#Home Office`, `#policy proposal`
+**标签**: `#AI agents`, `#agent benchmarking`, `#product management workflows`, `#Figma PM OS`, `#AI adoption`
 
 ---
